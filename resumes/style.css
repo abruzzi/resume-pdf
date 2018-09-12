@@ -84,12 +84,14 @@ h2 {
 }
 
 .project {
-	margin: 1.4rem 0;
+	margin: 2.6rem 0;
+	line-height: 1.2rem;
 }
 
 .project h4 {
-	color: #777;
-	font-weight: 600;
+	color: #999;
+	font-weight: 400;
+	font-size: 18px;
 }
 
 .project .role {
@@ -98,5 +100,6 @@ h2 {
 }
 
 p.description {
+	line-height: 1.6rem;
 	margin-bottom: 1rem;
 }
