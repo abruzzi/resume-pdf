@@ -23,7 +23,16 @@ class Resume {
     const page = await browser.newPage()
 
     await page.setContent(html)
-    await page.pdf({path: 'index.pdf', format: 'A4'})
+    await page.pdf({
+      path: 'index.pdf', 
+      format: 'A4', 
+      margin: { 
+        top: "20px", 
+        bottom: "20px",
+        right: "30px",
+        left: "30px",
+      }
+    })
     await browser.close()
   }
 }
