@@ -5,20 +5,7 @@ const Puppeteer = require('puppeteer')
 const ReadFile = Util.promisify(Fs.readFile)
 
 class Resume {  
-  async html() {
-    try {
-      const file = Path.resolve('resumes/index.result.html')
-      const content = await ReadFile(file, 'utf8')
-
-      return content
-    } catch (error) {
-      throw new Error('Cannot create invoice HTML template.')
-    }
-  }
-
   async pdf() {
-    const html = await this.html()
-
     const browser = await Puppeteer.launch()
     const page = await browser.newPage()
 
@@ -29,7 +16,10 @@ class Resume {
 
     const css = cssb.join('');
 
-    await page.setContent(html)
+    await page.goto('http://localhost:3000', {
+        waitUntil: 'networkidle2'
+    })
+
     await page.pdf({
       path: 'index.pdf', 
       format: 'A4', 
