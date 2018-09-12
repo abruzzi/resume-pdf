@@ -1,3 +1,4 @@
 node_modules/
 *.pdf
 resumes/*result.html
+fixtures/
