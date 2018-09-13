@@ -1,4 +1,4 @@
 #!/bin/bash
 
-node export.js
+node export.js $1
 open index.pdf

@@ -1,8 +1,4 @@
-const Fs = require('fs')  
-const Path = require('path')  
-const Util = require('util')  
 const Puppeteer = require('puppeteer')  
-const ReadFile = Util.promisify(Fs.readFile)
 
 class Resume {  
   async pdf() {
@@ -16,7 +12,7 @@ class Resume {
 
     const css = cssb.join('');
 
-    await page.goto('http://localhost:3000', {
+    await page.goto(`http://localhost:3000/#/resume/${process.argv[2]}`, {
         waitUntil: 'networkidle2'
     })
 
